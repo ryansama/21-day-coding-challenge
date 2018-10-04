@@ -22,3 +22,7 @@ function countColumns(){
 function gridSize(){
   return countColumns() + ' x ' + countRows();
 }
+
+function totalCells(){
+  return countRows() * countColumns();
+}
