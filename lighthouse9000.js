@@ -33,5 +33,5 @@ function convertColumn(coordinate){
 }
 
 function lightCell(coordinate){
-  return GRID[parseInt(coordinate.charAt(1),10)-1][convertColumn(coordinate)];
+  return GRID[coordinate.charAt(1)-1][convertColumn(coordinate)];
 }
