@@ -31,3 +31,7 @@ function convertColumn(coordinate){
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   return letters.indexOf(coordinate.charAt(0));
 }
+
+function lightCell(coordinate){
+  return GRID[parseInt(coordinate.charAt(1),10)-1][convertColumn(coordinate)];
+}
