@@ -26,3 +26,8 @@ function gridSize(){
 function totalCells(){
   return countRows() * countColumns();
 }
+
+function convertColumn(coordinate){
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  return letters.indexOf(coordinate.charAt(0));
+}
