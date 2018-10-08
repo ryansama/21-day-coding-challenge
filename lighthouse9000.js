@@ -47,3 +47,8 @@ function lightCell(coordinate){
 function isRock(coordinate){
   return lightCell(coordinate) == '^';
 }
+
+// Returns whether a cell is a currnet ('~')
+function isCurrent(coordinate){
+  return lightCell(coordinate) == '~';
+}
