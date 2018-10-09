@@ -52,3 +52,8 @@ function isRock(coordinate){
 function isCurrent(coordinate){
   return lightCell(coordinate) == '~';
 }
+
+// Returns whether a cell is a ship ('v')
+function isShip(coordinate){
+  return lightCell(coordinate) == 'v';
+}
