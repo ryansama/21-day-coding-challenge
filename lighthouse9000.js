@@ -57,3 +57,8 @@ function isCurrent(coordinate){
 function isShip(coordinate){
   return lightCell(coordinate) == 'v';
 }
+
+// Returns a row of the grid
+function lightRow(row){
+  return GRID[row-1];
+}
