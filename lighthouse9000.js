@@ -62,3 +62,16 @@ function isShip(coordinate){
 function lightRow(row){
   return GRID[row-1];
 }
+
+// Returns a column of the grid as 
+// a single array
+function lightColumn(colName){
+  const colIndex = convertColumn(colName);
+  var col = [];
+  
+  GRID.forEach(function(element){
+    col.push(element[colIndex]);
+  })
+  
+  return col;
+}
