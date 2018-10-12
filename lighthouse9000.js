@@ -11,6 +11,8 @@ const GRID = [
   ["", "^", "", "", "~", "~", "", "", "", ""],
 ];
 
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 // Returns the number of rows in GRID
 function countRows(){
   return GRID.length;
@@ -34,12 +36,16 @@ function totalCells(){
 // Given the coordinate as an argument, 
 // returns the number of the column
 function convertColumn(coordinate){
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   return letters.indexOf(coordinate.charAt(0));
 }
 
 // Returns the contents of a cell given its coordinate
 function lightCell(coordinate){
+  if (letters.indexOf(coordinate.charAt(0)) > GRID[0].length 
+      || coordinate.charAt(1) > GRID.length){
+    return false;
+  }
+
   return GRID[coordinate.charAt(1)-1][convertColumn(coordinate)];
 }
 
@@ -71,7 +77,7 @@ function lightColumn(colName){
   
   GRID.forEach(function(element){
     col.push(element[colIndex]);
-  })
+  });
   
   return col;
 }
