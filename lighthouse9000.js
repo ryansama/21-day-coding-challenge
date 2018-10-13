@@ -87,3 +87,43 @@ function lightColumn(colName){
   
   return col;
 }
+
+// Returns a list of all coordinates in 
+// the grid 
+function allCoordinates(){
+  var coordinates = [];
+
+  for (let i=0; i<countColumns(); i++) {
+    for (let j=0; j<countRows();j++){
+      coordinates.push(letters.charAt(i) + (j+1));
+    }
+  }
+
+  return coordinates;
+}
+
+// Returns a list of the coordinates 
+// of all the rocks in the grid
+function allRocks(){
+  return allCoordinates().filter(function(coordinate){
+    return isRock(coordinate);
+  }).sort(function(a,b){
+    if (convertRow(a) == convertRow(b)){
+      return convertColumn(a) - convertColumn(b);
+    }
+    return convertRow(a) - convertRow(b);
+  });
+}
+
+// Returns a list of the coordinates 
+// of all the currents in the grid
+function allCurrents(){
+  return allCoordinates().filter(function(coordinate){
+    return isCurrent(coordinate);
+  }).sort(function(a,b){
+    if (convertRow(a) == convertRow(b)){
+      return convertColumn(a) - convertColumn(b);
+    }
+    return convertRow(a) - convertRow(b);
+  });
+}
