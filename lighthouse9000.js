@@ -39,14 +39,20 @@ function convertColumn(coordinate){
   return letters.indexOf(coordinate.charAt(0));
 }
 
+// Given the coordinate as an argument, 
+// returns the index of the row
+function convertRow(coordinate){
+  return parseInt(coordinate.substring(1)) - 1;
+}
+
 // Returns the contents of a cell given its coordinate
 function lightCell(coordinate){
-  if (letters.indexOf(coordinate.charAt(0)) > GRID[0].length 
-      || coordinate.charAt(1) > GRID.length){
+  if (convertColumn(coordinate) > countColumns() - 1
+      || convertRow(coordinate) > countRows() - 1){
     return false;
   }
 
-  return GRID[coordinate.charAt(1)-1][convertColumn(coordinate)];
+  return GRID[convertRow(coordinate)][convertColumn(coordinate)];
 }
 
 // Returns whether a cell is a rock ('^')
