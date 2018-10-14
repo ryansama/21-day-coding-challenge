@@ -127,3 +127,16 @@ function allCurrents(){
     return convertRow(a) - convertRow(b);
   });
 }
+
+// Returns a list of the coordinates 
+// of all the ships in the grid
+function allShips(){
+  return allCoordinates().filter(function(coordinate){
+    return isShip(coordinate);
+  }).sort(function(a,b){
+    if (convertRow(a) == convertRow(b)){
+      return convertColumn(a) - convertColumn(b);
+    }
+    return convertRow(a) - convertRow(b);
+  });
+}
