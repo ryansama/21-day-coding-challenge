@@ -140,3 +140,9 @@ function allShips(){
     return convertRow(a) - convertRow(b);
   });
 }
+
+// Returns the coordinates of 
+// the first rock in the grid
+function firstRock(){
+  return allRocks()[0];
+}
