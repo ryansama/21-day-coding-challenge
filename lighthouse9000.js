@@ -146,3 +146,9 @@ function allShips(){
 function firstRock(){
   return allRocks()[0];
 }
+
+// Returns the coordinates of 
+// the first current in the grid
+function firstCurrent(){
+  return allCurrents()[0];
+}
