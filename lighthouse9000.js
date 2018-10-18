@@ -152,3 +152,10 @@ function firstRock(){
 function firstCurrent(){
   return allCurrents()[0];
 }
+
+// Returns an array of the coordinates 
+// of the ship furthest to the west (left) 
+// and east (right) of the grid.
+function shipReport(){
+  return [allShips().sort().shift(), allShips().sort().pop()];
+}
