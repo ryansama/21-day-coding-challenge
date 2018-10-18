@@ -159,3 +159,16 @@ function firstCurrent(){
 function shipReport(){
   return [allShips().sort().shift(), allShips().sort().pop()];
 }
+
+// Returns a number value for how
+// dangerous the cell is
+function howDangerous(coordinate){
+  var dangerDict = {
+    "^":100,
+    "~":50,
+    "v":0,
+    "":0
+  };
+  
+  return dangerDict[lightCell(coordinate)];
+}
