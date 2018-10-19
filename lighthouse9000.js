@@ -172,3 +172,11 @@ function howDangerous(coordinate){
   
   return dangerDict[lightCell(coordinate)];
 }
+
+// Returns a pair of percentages:
+// percentage of rocks in the grid,
+// percentage of currents in the grid
+function percentageReport(){
+  return [Number(Math.round(allRocks().length / totalCells() * 100 +'e2')+'e-2'),
+          Number(Math.round(allCurrents().length / totalCells() * 100+'e2')+'e-2')];
+}
