@@ -177,6 +177,6 @@ function howDangerous(coordinate){
 // percentage of rocks in the grid,
 // percentage of currents in the grid
 function percentageReport(){
-  return [Number(Math.round(allRocks().length / totalCells() * 100 +'e2')+'e-2'),
-          Number(Math.round(allCurrents().length / totalCells() * 100+'e2')+'e-2')];
+  return [(100 * allRocks().length / totalCells()).toFixed(2),
+          (100 * allCurrents().length / totalCells()).toFixed(2)];
 }
