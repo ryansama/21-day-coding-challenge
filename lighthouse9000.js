@@ -160,17 +160,23 @@ function shipReport(){
   return [allShips().sort().shift(), allShips().sort().pop()];
 }
 
-// Returns a number value for how
-// dangerous the cell is
-function howDangerous(coordinate){
+// Helper for getting danger percentage
+// of a cell value
+function getDangerOf(cellVal){
   var dangerDict = {
     "^":100,
     "~":50,
     "v":0,
     "":0
   };
-  
-  return dangerDict[lightCell(coordinate)];
+
+  return dangerDict[cellVal];
+}
+
+// Returns a number value for how
+// dangerous the cell is
+function howDangerous(coordinate){
+  return getDangerOf(lightCell(coordinate));
 }
 
 // Returns a pair of percentages:
@@ -179,4 +185,15 @@ function howDangerous(coordinate){
 function percentageReport(){
   return [(100 * allRocks().length / totalCells()).toFixed(2),
           (100 * allCurrents().length / totalCells()).toFixed(2)];
+}
+
+// Returns the grid with all of its 
+// values replaced by its corresponding
+// danger percentages
+function safetyReport(){
+  return GRID.map(row => {
+    return row.map(cell => {
+      return getDangerOf(cell);
+    });
+  });
 }
