@@ -197,3 +197,15 @@ function safetyReport(){
     });
   });
 }
+
+// Returns the distance between two
+// coordinates
+function calcDistance(c1, c2){
+  var l1 = [convertRow(c1), convertColumn(c1)];
+  var l2 = [convertRow(c2), convertColumn(c2)];
+
+  var a = l1[1] - l2[1];
+  var b = l1[0] - l2[0];
+
+  return Math.sqrt((a * a) + (b * b)).toFixed(2);
+}
